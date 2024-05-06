@@ -2838,12 +2838,37 @@ body{
 }
 .appointment.single-page .time-sidual li span{
 	display:inline-block;
-	float:right;
+	/* float:right; */
 }
 .appointment.single-page .day-head .time {
 	font-weight: 400;
 	float: right;
 }
+
+.hexagram-section {
+	display: flex;
+	gap: 100px;
+}
+
+.hexagram-title {
+	font-size: 18px;
+}
+
+.hexagram-number {
+	width: 22px;
+	font-size: 22px;
+	text-align: center;
+}
+
+.hexagram-text {
+	font-size: 18px;
+	text-align: center;
+}
+
+.hexagram-title-none {
+	color: #fff;
+}
+
 /*==========================
 	End Appointment CSS
 ============================*/
