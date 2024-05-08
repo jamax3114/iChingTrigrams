@@ -983,6 +983,131 @@ const hexagram = {
 			//hexagram_s_12
 			var hexagramSecondaryText_56 = getShowHexagramText(hexagramSecondaryIdx5 + hexagramSecondaryIdx6);
 			$('#hexagram_s_56').text(hexagramSecondaryText_56);
+
+			//hexagram_p_remix_1_1
+			var hexagramPrimaryTextRemix_11 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx3);
+			$('#hexagram_p_remix_1_1').text(hexagramPrimaryTextRemix_11);
+
+			//hexagram_p_remix_1_2
+			var hexagramPrimaryTextRemix_12 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx5);
+			$('#hexagram_p_remix_1_2').text(hexagramPrimaryTextRemix_12);
+
+			//hexagram_p_remix_1_3
+			var hexagramPrimaryTextRemix_13 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx2);
+			$('#hexagram_p_remix_1_2').text(hexagramPrimaryTextRemix_13);
+
+			//hexagram_p_remix_1_4
+			var hexagramPrimaryTextRemix_14 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx4);
+			$('#hexagram_p_remix_1_2').text(hexagramPrimaryTextRemix_14);
+
+
+			//hexagram_p_remix_1_5
+			var hexagramPrimaryTextRemix_15 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx6);
+			$('#hexagram_p_remix_1_2').text(hexagramPrimaryTextRemix_15);
+
+			//hexagram_p_remix_2_1
+			var hexagramPrimaryTextRemix_21 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx1);
+			$('#hexagram_p_remix_2_1').text(hexagramPrimaryTextRemix_21);
+
+			//hexagram_p_remix_2_2
+			var hexagramPrimaryTextRemix_22 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx5);
+			$('#hexagram_p_remix_2_2').text(hexagramPrimaryTextRemix_22);
+
+			//hexagram_p_remix_2_3
+			var hexagramPrimaryTextRemix_23 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx2);
+			$('#hexagram_p_remix_2_3').text(hexagramPrimaryTextRemix_23);
+
+			//hexagram_p_remix_2_4
+			var hexagramPrimaryTextRemix_24 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx4);
+			$('#hexagram_p_remix_2_4').text(hexagramPrimaryTextRemix_24);
+			
+			//hexagram_p_remix_2_5
+			var hexagramPrimaryTextRemix_25 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx6);
+			$('#hexagram_p_remix_2_5').text(hexagramPrimaryTextRemix_25);
+
+
+			//hexagram_p_remix_3_1
+			var hexagramPrimaryTextRemix_31 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx1);
+			$('#hexagram_p_remix_3_1').text(hexagramPrimaryTextRemix_31);
+
+			//hexagram_p_remix_3_2
+			var hexagramPrimaryTextRemix_32 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx3);
+			$('#hexagram_p_remix_3_2').text(hexagramPrimaryTextRemix_32);
+
+			//hexagram_p_remix_3_3
+			var hexagramPrimaryTextRemix_33 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx2);
+			$('#hexagram_p_remix_3_3').text(hexagramPrimaryTextRemix_33);
+
+			//hexagram_p_remix_3_4
+			var hexagramPrimaryTextRemix_34 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx4);
+			$('#hexagram_p_remix_3_4').text(hexagramPrimaryTextRemix_34);
+			
+			//hexagram_p_remix_3_5
+			var hexagramPrimaryTextRemix_35 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx6);
+			$('#hexagram_p_remix_3_5').text(hexagramPrimaryTextRemix_35);
+
+
+			//hexagram_p_remix_4_1
+			var hexagramPrimaryTextRemix_41 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx1);
+			$('#hexagram_p_remix_4_1').text(hexagramPrimaryTextRemix_41);
+
+			//hexagram_p_remix_4_2
+			var hexagramPrimaryTextRemix_42 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx3);
+			$('#hexagram_p_remix_4_2').text(hexagramPrimaryTextRemix_42);
+
+			//hexagram_p_remix_4_3
+			var hexagramPrimaryTextRemix_43 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx5);
+			$('#hexagram_p_remix_4_3').text(hexagramPrimaryTextRemix_43);
+
+			//hexagram_p_remix_4_4
+			var hexagramPrimaryTextRemix_44 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx4);
+			$('#hexagram_p_remix_4_4').text(hexagramPrimaryTextRemix_44);
+			
+			//hexagram_p_remix_4_5
+			var hexagramPrimaryTextRemix_45 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx6);
+			$('#hexagram_p_remix_4_5').text(hexagramPrimaryTextRemix_45);
+
+
+			//hexagram_p_remix_5_1
+			var hexagramPrimaryTextRemix_51 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx1);
+			$('#hexagram_p_remix_5_1').text(hexagramPrimaryTextRemix_51);
+
+			//hexagram_p_remix_5_2
+			var hexagramPrimaryTextRemix_52 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx3);
+			$('#hexagram_p_remix_5_2').text(hexagramPrimaryTextRemix_52);
+
+			//hexagram_p_remix_5_3
+			var hexagramPrimaryTextRemix_53 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx5);
+			$('#hexagram_p_remix_5_3').text(hexagramPrimaryTextRemix_53);
+
+			//hexagram_p_remix_5_4
+			var hexagramPrimaryTextRemix_54 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx2);
+			$('#hexagram_p_remix_5_4').text(hexagramPrimaryTextRemix_54);
+			
+			//hexagram_p_remix_5_5
+			var hexagramPrimaryTextRemix_55 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx6);
+			$('#hexagram_p_remix_5_5').text(hexagramPrimaryTextRemix_55);
+
+
+			//hexagram_p_remix_6_1
+			var hexagramPrimaryTextRemix_61 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx1);
+			$('#hexagram_p_remix_6_1').text(hexagramPrimaryTextRemix_61);
+
+			//hexagram_p_remix_6_2
+			var hexagramPrimaryTextRemix_62 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx3);
+			$('#hexagram_p_remix_6_2').text(hexagramPrimaryTextRemix_62);
+
+			//hexagram_p_remix_6_3
+			var hexagramPrimaryTextRemix_63 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx5);
+			$('#hexagram_p_remix_6_3').text(hexagramPrimaryTextRemix_63);
+
+			//hexagram_p_remix_6_4
+			var hexagramPrimaryTextRemix_64 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx2);
+			$('#hexagram_p_remix_6_4').text(hexagramPrimaryTextRemix_64);
+			
+			//hexagram_p_remix_6_5
+			var hexagramPrimaryTextRemix_65 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx4);
+			$('#hexagram_p_remix_6_5').text(hexagramPrimaryTextRemix_65);
 		}
 
 	});
@@ -1012,6 +1137,12 @@ const hexagram = {
 	let hexagramMap = new Map(Object.entries(hexagram));
 	function getShowHexagramText(trigramsData) {
 		var showText = hexagramMap.get(trigramsData).fullName;
+		console.log(showText);
+		return showText;
+	}
+
+	function getShowHexagramShortName(trigramsData) {
+		var showText = hexagramMap.get(trigramsData).name;
 		console.log(showText);
 		return showText;
 	}

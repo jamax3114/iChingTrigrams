@@ -2869,6 +2869,17 @@ body{
 	color: #fff;
 }
 
+.hexagram-group {
+	margin-bottom: 20px;
+}
+
+.hexagram-group-border {
+	border-width:3px;
+	border-right-style:solid;
+	border-color:#000;
+	padding:0 20px;
+}
+
 /*==========================
 	End Appointment CSS
 ============================*/
