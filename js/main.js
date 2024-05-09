@@ -892,12 +892,10 @@ const hexagram = {
 		// });
 		
 		
-
-		
 		
 		$('#btn_preview').click(function () {
-			const trigramsPrimaryList = [];
-			const trigramsSecondaryList = [];
+			var trigramsPrimaryList = [];
+			var trigramsSecondaryList = [];
 			$('#form_trigrams_8_preview > .form-radio-inline').addClass('d-none');
 			console.log('btn_preview');
 			var formDomTrigrams8 = $('#form_trigrams_8');			
@@ -907,22 +905,44 @@ const hexagram = {
 					// console.log('#chked_'+$(this).val());
 					var arrItem = $(this).val().split("_");
 					trigramsPrimaryList.push(arrItem[1]);
-					$('#chked_'+$(this).val()).removeClass('d-none');					
+					$('#chked_'+$(this).val()).removeClass('d-none');
 				} 
 				else {
 					var arrItem = $(this).val().split("_");
 					trigramsSecondaryList.push(arrItem[1]);
+					$('#chked_'+$(this).val()).addClass('d-none');
 				}
-				$('#btn_execute').removeClass('d-none');
 			});
+
+			if (trigramsPrimaryList.length<8) {
+				$('#form_trigrams_8_preview .form-radio-inline').addClass('d-none');
+				alert("請選滿8顆");
+				return false;
+			}
 			// console.log("=== 原卦 8~1 ===");
 			// console.log(trigramsPrimaryList);
 			// console.log("=== 副卦 8~1 ===");
 			// console.log(trigramsSecondaryList);
 			//console.log("=== 1~8 ===");
 			//console.log(trigramsList);
+			
 			getHexagramPrimary(trigramsPrimaryList, trigramsSecondaryList);
+			$('#btn_execute').removeClass('d-none');
 		});
+
+		$('#btn_execute').click(function () {
+			console.log('btn_execute');
+			$('#hexagram_result').removeClass('d-none');
+			goResult();
+
+		});
+
+		function goResult() {
+			$('html,body').animate({
+				scrollTop: $('#hexagram_result').offset().top
+			}, 'show');
+			return false;
+		}
 
 		function getHexagramPrimary(trigramsPrimaryList, trigramsSecondaryList) {
 			//Primary
@@ -1014,7 +1034,6 @@ const hexagram = {
 	let hexagramMap = new Map(Object.entries(hexagram));
 	function getShowHexagramText(trigramsIdx1, trigramsIdx2, showType='name') {
 		var trigramsData = trigramsIdx1 + trigramsIdx2;
-		console.log("remix:" + trigramsIdx1 + "-" + trigramsIdx2);
 		var hexagramObj = hexagramMap.get(trigramsData)
 		var showText = "";
 		if (showType==='name') {
@@ -1070,7 +1089,6 @@ const hexagram = {
 		for (let groupIdx = 0; groupIdx < arrGroup.length; groupIdx++) {
 			var arrSubGroup = arrGroup[groupIdx];
 			for (var index = 0; index < arrSubGroup.length; index++) {
-				console.log(arrSubGroup[index]);
 				var idx1 = arrSubGroup[index][0];
 				var idx2 = arrSubGroup[index][1];
 				var hexagramTextRemix= getShowHexagramText(arrHexagram1[idx1], arrHexagram2[idx2]);

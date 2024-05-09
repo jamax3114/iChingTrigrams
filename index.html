@@ -524,11 +524,11 @@
 												</label>
 											</div>
 										</div>
-										<!-- <div class="col-6">
+										<div class="col-6">
 											<div class="form-group login-btn">
 												<button class="btn d-none" id="btn_execute" type="button">確定，取得結果</button>
 											</div>
-										</div> -->
+										</div>
 									</div>
 								</form>								
 							</div>
@@ -540,7 +540,7 @@
 		<!--/ End Contact Us -->
 		
 		<!-- Start Result -->
-		<section class="appointment single-page contact-us section">
+		<section id="hexagram_result" class="appointment single-page contact-us section d-none">
 			<div id="printArea" class="container" style='page-break-before: always'>
 				<div class="inner">
 					<div class="col-lg-12 col-md-12 col-12">
@@ -828,6 +828,13 @@
 							<div class="form-group">
 								<div class="button">
 									<button type="button" class="btn" onclick="javascript:onPrint();" value="print">執行列印</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-12">
+							<div class="form-group">
+								<div class="button">
+									<button type="button" class="btn" onclick="javascript:location.reload();" value="print">全部清除</button>
 								</div>
 							</div>
 						</div>
