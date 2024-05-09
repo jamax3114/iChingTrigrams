@@ -33,8 +33,6 @@ Version:	1.1
 [End Activation Code]
 =========================================*/ 
 
-//var trigrams = '[{"111": [{"key": "1", "value": 1, "name": "天"}]}, {"011": [{"key":"2", "value": 2, "name": "澤"}]},{"101": [{"key": "3", "value": 3, "name": "火"}]}, {"001": [{"key": "4","value": 4,"name": "雷"}]}, {"110": [{"key": "5","value": 5,"name": "風"}]}, {"010": [{"key": "6","value": 6,"name": "水"}]},{"100": [{"key": "7","value": 7,"name": "山"}]},{"000": [{"key": "8","value": 8,"name": "地"}]}]';
-
 const trigrams = {
 	"111": 
 		{
@@ -105,7 +103,7 @@ const hexagram = {
             "key": "88",
             "value": 2,
             "fullName": "坤為地",
-            "name": "地"
+            "name": "地地"
         }
     ,
     "010001": 
@@ -257,7 +255,7 @@ const hexagram = {
             "key": "34",
             "value": 21,
             "fullName": "火雷噬",
-            "name": "嗑"
+            "name": "噬嗑"
         }
     ,
     "100101": 
@@ -329,7 +327,7 @@ const hexagram = {
             "key": "33",
             "value": 30,
             "fullName": "離為火",
-            "name": "火"
+            "name": "火火"
         }
     ,
     "011100": 
@@ -564,7 +562,7 @@ const hexagram = {
             "name": "渙"
         }
     ,
-    "0101011": 
+    "010011": 
         {
             "key": "62",
             "value": 60,
@@ -905,12 +903,10 @@ const hexagram = {
 			var formDomTrigrams8 = $('#form_trigrams_8');			
 			formDomTrigrams8.find('input:radio').each(function () {
 				if ($(this).prop('checked')) {
-					//urls.push('<div class="' + id + '">' + url + '</div>');
-					console.log($(this).val());
-					console.log('#chked_'+$(this).val());
+					// console.log($(this).val());
+					// console.log('#chked_'+$(this).val());
 					var arrItem = $(this).val().split("_");
 					trigramsPrimaryList.push(arrItem[1]);
-					console.log(arrItem);					
 					$('#chked_'+$(this).val()).removeClass('d-none');					
 				} 
 				else {
@@ -919,235 +915,171 @@ const hexagram = {
 				}
 				$('#btn_execute').removeClass('d-none');
 			});
-			console.log("=== 原卦 8~1 ===");
-			console.log(trigramsPrimaryList);
-
-			console.log("=== 副卦 8~1 ===");
-			console.log(trigramsSecondaryList);
+			// console.log("=== 原卦 8~1 ===");
+			// console.log(trigramsPrimaryList);
+			// console.log("=== 副卦 8~1 ===");
+			// console.log(trigramsSecondaryList);
 			//console.log("=== 1~8 ===");
-			//trigramsList.reverse();
 			//console.log(trigramsList);
 			getHexagramPrimary(trigramsPrimaryList, trigramsSecondaryList);
 		});
 
 		function getHexagramPrimary(trigramsPrimaryList, trigramsSecondaryList) {
-			console.log(1);
-			console.log(trigramsPrimaryList);
-
 			//Primary
-			var hexagramPrimaryIdx1 = trigramsPrimaryList[2] + trigramsPrimaryList[3] + trigramsPrimaryList[4];
-			var hexagramPrimaryIdx2 = trigramsPrimaryList[5] + trigramsPrimaryList[6] + trigramsPrimaryList[7];
-			$('#hexagram_p_idx_1').text(getShowTrigramsText(hexagramPrimaryIdx1));
-			$('#hexagram_p_idx_2').text(getShowTrigramsText(hexagramPrimaryIdx2));
+			var arrHexagramPrimary = [];
+			arrHexagramPrimary[1] = trigramsPrimaryList[2] + trigramsPrimaryList[3] + trigramsPrimaryList[4];
+			arrHexagramPrimary[2] = trigramsPrimaryList[5] + trigramsPrimaryList[6] + trigramsPrimaryList[7];
+			$('#hexagram_p_idx_1').text(getShowTrigramsText(arrHexagramPrimary[1]));
+			$('#hexagram_p_idx_2').text(getShowTrigramsText(arrHexagramPrimary[2]));
 			//hexagram_p_12
-			var hexagramPrimaryText_12 = getShowHexagramText(hexagramPrimaryIdx1 + hexagramPrimaryIdx2);
+			var hexagramPrimaryText_12 = getShowHexagramText(arrHexagramPrimary[1], arrHexagramPrimary[2], 'fullName');
 			$('#hexagram_p_12').text(hexagramPrimaryText_12);
 
-			var hexagramPrimaryIdx3 = trigramsPrimaryList[1] + trigramsPrimaryList[2] + trigramsPrimaryList[3];
-			var hexagramPrimaryIdx4 = trigramsPrimaryList[4] + trigramsPrimaryList[5] + trigramsPrimaryList[6];
-			$('#hexagram_p_idx_3').text(getShowTrigramsText(hexagramPrimaryIdx3));
-			$('#hexagram_p_idx_4').text(getShowTrigramsText(hexagramPrimaryIdx4));
+			arrHexagramPrimary[3] = trigramsPrimaryList[1] + trigramsPrimaryList[2] + trigramsPrimaryList[3];
+			arrHexagramPrimary[4] = trigramsPrimaryList[4] + trigramsPrimaryList[5] + trigramsPrimaryList[6];
+			$('#hexagram_p_idx_3').text(getShowTrigramsText(arrHexagramPrimary[3]));
+			$('#hexagram_p_idx_4').text(getShowTrigramsText(arrHexagramPrimary[4]));
 			//hexagram_p_34
-			var hexagramPrimaryText_34 = getShowHexagramText(hexagramPrimaryIdx3 + hexagramPrimaryIdx4);
+			var hexagramPrimaryText_34 = getShowHexagramText(arrHexagramPrimary[3], arrHexagramPrimary[4], 'fullName');
 			$('#hexagram_p_34').text(hexagramPrimaryText_34);
 
-			var hexagramPrimaryIdx5 = trigramsPrimaryList[0] + trigramsPrimaryList[1] + trigramsPrimaryList[2];
-			var hexagramPrimaryIdx6 = trigramsPrimaryList[3] + trigramsPrimaryList[4] + trigramsPrimaryList[5];
-			$('#hexagram_p_idx_5').text(getShowTrigramsText(hexagramPrimaryIdx5));
-			$('#hexagram_p_idx_6').text(getShowTrigramsText(hexagramPrimaryIdx6));
+			arrHexagramPrimary[5] = trigramsPrimaryList[0] + trigramsPrimaryList[1] + trigramsPrimaryList[2];
+			arrHexagramPrimary[6] = trigramsPrimaryList[3] + trigramsPrimaryList[4] + trigramsPrimaryList[5];
+			$('#hexagram_p_idx_5').text(getShowTrigramsText(arrHexagramPrimary[5]));
+			$('#hexagram_p_idx_6').text(getShowTrigramsText(arrHexagramPrimary[6]));
 			//hexagram_p_56
-			var hexagramPrimaryText_56 = getShowHexagramText(hexagramPrimaryIdx5 + hexagramPrimaryIdx6);
+			var hexagramPrimaryText_56 = getShowHexagramText(arrHexagramPrimary[5], arrHexagramPrimary[6], 'fullName');
 			$('#hexagram_p_56').text(hexagramPrimaryText_56);
 			
 			//Secondary
-			var hexagramSecondaryIdx1 = trigramsSecondaryList[2] + trigramsSecondaryList[3] + trigramsSecondaryList[4];
-			var hexagramSecondaryIdx2 = trigramsSecondaryList[5] + trigramsSecondaryList[6] + trigramsSecondaryList[7];
-			$('#hexagram_s_idx_1').text(getShowTrigramsText(hexagramSecondaryIdx1));
-			$('#hexagram_s_idx_2').text(getShowTrigramsText(hexagramSecondaryIdx2));
+			var arrHexagramSecondary = [];
+			arrHexagramSecondary[1] = trigramsSecondaryList[2] + trigramsSecondaryList[3] + trigramsSecondaryList[4];
+			arrHexagramSecondary[2] = trigramsSecondaryList[5] + trigramsSecondaryList[6] + trigramsSecondaryList[7];
+			$('#hexagram_s_idx_1').text(getShowTrigramsText(arrHexagramSecondary[1]));
+			$('#hexagram_s_idx_2').text(getShowTrigramsText(arrHexagramSecondary[2]));
 			//hexagram_s_12
-			var hexagramSecondaryText_12 = getShowHexagramText(hexagramSecondaryIdx1 + hexagramSecondaryIdx2);
+			var hexagramSecondaryText_12 = getShowHexagramText(arrHexagramSecondary[1], arrHexagramSecondary[2], 'fullName');
 			$('#hexagram_s_12').text(hexagramSecondaryText_12);
 
-			var hexagramSecondaryIdx3 = trigramsSecondaryList[1] + trigramsSecondaryList[2] + trigramsSecondaryList[3];
-			var hexagramSecondaryIdx4 = trigramsSecondaryList[4] + trigramsSecondaryList[5] + trigramsSecondaryList[6];
-			$('#hexagram_s_idx_3').text(getShowTrigramsText(hexagramSecondaryIdx3));
-			$('#hexagram_s_idx_4').text(getShowTrigramsText(hexagramSecondaryIdx4));
+			arrHexagramSecondary[3] = trigramsSecondaryList[1] + trigramsSecondaryList[2] + trigramsSecondaryList[3];
+			arrHexagramSecondary[4] = trigramsSecondaryList[4] + trigramsSecondaryList[5] + trigramsSecondaryList[6];
+			$('#hexagram_s_idx_3').text(getShowTrigramsText(arrHexagramSecondary[3]));
+			$('#hexagram_s_idx_4').text(getShowTrigramsText(arrHexagramSecondary[4]));
 			//hexagram_s_34
-			var hexagramSecondaryText_34 = getShowHexagramText(hexagramSecondaryIdx3 + hexagramSecondaryIdx4);
+			var hexagramSecondaryText_34 = getShowHexagramText(arrHexagramSecondary[3], arrHexagramSecondary[4], 'fullName');
 			$('#hexagram_s_34').text(hexagramSecondaryText_34);
 
-			var hexagramSecondaryIdx5 = trigramsSecondaryList[0] + trigramsSecondaryList[1] + trigramsSecondaryList[2];
-			var hexagramSecondaryIdx6 = trigramsSecondaryList[3] + trigramsSecondaryList[4] + trigramsSecondaryList[5];
-			$('#hexagram_s_idx_5').text(getShowTrigramsText(hexagramSecondaryIdx5));
-			$('#hexagram_s_idx_6').text(getShowTrigramsText(hexagramSecondaryIdx6));
+			arrHexagramSecondary[5] = trigramsSecondaryList[0] + trigramsSecondaryList[1] + trigramsSecondaryList[2];
+			arrHexagramSecondary[6] = trigramsSecondaryList[3] + trigramsSecondaryList[4] + trigramsSecondaryList[5];
+			$('#hexagram_s_idx_5').text(getShowTrigramsText(arrHexagramSecondary[5]));
+			$('#hexagram_s_idx_6').text(getShowTrigramsText(arrHexagramSecondary[6]));
 			//hexagram_s_12
-			var hexagramSecondaryText_56 = getShowHexagramText(hexagramSecondaryIdx5 + hexagramSecondaryIdx6);
+			var hexagramSecondaryText_56 = getShowHexagramText(arrHexagramSecondary[5], arrHexagramSecondary[6], 'fullName');
 			$('#hexagram_s_56').text(hexagramSecondaryText_56);
 
-			//hexagram_p_remix_1_1
-			var hexagramPrimaryTextRemix_11 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx3);
-			$('#hexagram_p_remix_1_1').text(hexagramPrimaryTextRemix_11);
-
-			//hexagram_p_remix_1_2
-			var hexagramPrimaryTextRemix_12 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx5);
-			$('#hexagram_p_remix_1_2').text(hexagramPrimaryTextRemix_12);
-
-			//hexagram_p_remix_1_3
-			var hexagramPrimaryTextRemix_13 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx2);
-			$('#hexagram_p_remix_1_2').text(hexagramPrimaryTextRemix_13);
-
-			//hexagram_p_remix_1_4
-			var hexagramPrimaryTextRemix_14 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx4);
-			$('#hexagram_p_remix_1_2').text(hexagramPrimaryTextRemix_14);
-
-
-			//hexagram_p_remix_1_5
-			var hexagramPrimaryTextRemix_15 = getShowHexagramShortName(hexagramPrimaryIdx1 + hexagramPrimaryIdx6);
-			$('#hexagram_p_remix_1_2').text(hexagramPrimaryTextRemix_15);
-
-			//hexagram_p_remix_2_1
-			var hexagramPrimaryTextRemix_21 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx1);
-			$('#hexagram_p_remix_2_1').text(hexagramPrimaryTextRemix_21);
-
-			//hexagram_p_remix_2_2
-			var hexagramPrimaryTextRemix_22 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx5);
-			$('#hexagram_p_remix_2_2').text(hexagramPrimaryTextRemix_22);
-
-			//hexagram_p_remix_2_3
-			var hexagramPrimaryTextRemix_23 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx2);
-			$('#hexagram_p_remix_2_3').text(hexagramPrimaryTextRemix_23);
-
-			//hexagram_p_remix_2_4
-			var hexagramPrimaryTextRemix_24 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx4);
-			$('#hexagram_p_remix_2_4').text(hexagramPrimaryTextRemix_24);
-			
-			//hexagram_p_remix_2_5
-			var hexagramPrimaryTextRemix_25 = getShowHexagramShortName(hexagramPrimaryIdx3 + hexagramPrimaryIdx6);
-			$('#hexagram_p_remix_2_5').text(hexagramPrimaryTextRemix_25);
-
-
-			//hexagram_p_remix_3_1
-			var hexagramPrimaryTextRemix_31 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx1);
-			$('#hexagram_p_remix_3_1').text(hexagramPrimaryTextRemix_31);
-
-			//hexagram_p_remix_3_2
-			var hexagramPrimaryTextRemix_32 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx3);
-			$('#hexagram_p_remix_3_2').text(hexagramPrimaryTextRemix_32);
-
-			//hexagram_p_remix_3_3
-			var hexagramPrimaryTextRemix_33 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx2);
-			$('#hexagram_p_remix_3_3').text(hexagramPrimaryTextRemix_33);
-
-			//hexagram_p_remix_3_4
-			var hexagramPrimaryTextRemix_34 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx4);
-			$('#hexagram_p_remix_3_4').text(hexagramPrimaryTextRemix_34);
-			
-			//hexagram_p_remix_3_5
-			var hexagramPrimaryTextRemix_35 = getShowHexagramShortName(hexagramPrimaryIdx5 + hexagramPrimaryIdx6);
-			$('#hexagram_p_remix_3_5').text(hexagramPrimaryTextRemix_35);
-
-
-			//hexagram_p_remix_4_1
-			var hexagramPrimaryTextRemix_41 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx1);
-			$('#hexagram_p_remix_4_1').text(hexagramPrimaryTextRemix_41);
-
-			//hexagram_p_remix_4_2
-			var hexagramPrimaryTextRemix_42 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx3);
-			$('#hexagram_p_remix_4_2').text(hexagramPrimaryTextRemix_42);
-
-			//hexagram_p_remix_4_3
-			var hexagramPrimaryTextRemix_43 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx5);
-			$('#hexagram_p_remix_4_3').text(hexagramPrimaryTextRemix_43);
-
-			//hexagram_p_remix_4_4
-			var hexagramPrimaryTextRemix_44 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx4);
-			$('#hexagram_p_remix_4_4').text(hexagramPrimaryTextRemix_44);
-			
-			//hexagram_p_remix_4_5
-			var hexagramPrimaryTextRemix_45 = getShowHexagramShortName(hexagramPrimaryIdx2 + hexagramPrimaryIdx6);
-			$('#hexagram_p_remix_4_5').text(hexagramPrimaryTextRemix_45);
-
-
-			//hexagram_p_remix_5_1
-			var hexagramPrimaryTextRemix_51 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx1);
-			$('#hexagram_p_remix_5_1').text(hexagramPrimaryTextRemix_51);
-
-			//hexagram_p_remix_5_2
-			var hexagramPrimaryTextRemix_52 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx3);
-			$('#hexagram_p_remix_5_2').text(hexagramPrimaryTextRemix_52);
-
-			//hexagram_p_remix_5_3
-			var hexagramPrimaryTextRemix_53 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx5);
-			$('#hexagram_p_remix_5_3').text(hexagramPrimaryTextRemix_53);
-
-			//hexagram_p_remix_5_4
-			var hexagramPrimaryTextRemix_54 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx2);
-			$('#hexagram_p_remix_5_4').text(hexagramPrimaryTextRemix_54);
-			
-			//hexagram_p_remix_5_5
-			var hexagramPrimaryTextRemix_55 = getShowHexagramShortName(hexagramPrimaryIdx4 + hexagramPrimaryIdx6);
-			$('#hexagram_p_remix_5_5').text(hexagramPrimaryTextRemix_55);
-
-
-			//hexagram_p_remix_6_1
-			var hexagramPrimaryTextRemix_61 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx1);
-			$('#hexagram_p_remix_6_1').text(hexagramPrimaryTextRemix_61);
-
-			//hexagram_p_remix_6_2
-			var hexagramPrimaryTextRemix_62 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx3);
-			$('#hexagram_p_remix_6_2').text(hexagramPrimaryTextRemix_62);
-
-			//hexagram_p_remix_6_3
-			var hexagramPrimaryTextRemix_63 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx5);
-			$('#hexagram_p_remix_6_3').text(hexagramPrimaryTextRemix_63);
-
-			//hexagram_p_remix_6_4
-			var hexagramPrimaryTextRemix_64 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx2);
-			$('#hexagram_p_remix_6_4').text(hexagramPrimaryTextRemix_64);
-			
-			//hexagram_p_remix_6_5
-			var hexagramPrimaryTextRemix_65 = getShowHexagramShortName(hexagramPrimaryIdx6 + hexagramPrimaryIdx4);
-			$('#hexagram_p_remix_6_5').text(hexagramPrimaryTextRemix_65);
+			//hexagram_p_remix
+			getHexagramFirstPartResult('Primary', arrHexagramPrimary);
+			//hexagram_s_remix
+			getHexagramFirstPartResult('Secondary', arrHexagramSecondary);
+			//hexagram_ps_remix
+			getHexagramSecondPartResult('Primary', arrHexagramPrimary, arrHexagramSecondary);
+			//hexagram_sp_remix
+			getHexagramSecondPartResult('Secondary', arrHexagramSecondary, arrHexagramPrimary);
 		}
 
 	});
 
-	function fetchJSONData() {
-		fetch("./data/yichin.json")
-			.then((res) => {
-				if (!res.ok) {
-					throw new Error
-						(`HTTP error! Status: ${res.status}`);
-				}
-				return res.json();
-			})
-			.then((data) => 
-			console.log(data))
-			.catch((error) => 
-			console.error("Unable to fetch data:", error));
-	}
+	// function fetchJSONData() {
+	// 	fetch("./data/yichin.json")
+	// 		.then((res) => {
+	// 			if (!res.ok) {
+	// 				throw new Error
+	// 					(`HTTP error! Status: ${res.status}`);
+	// 			}
+	// 			return res.json();
+	// 		})
+	// 		.then((data) => 
+	// 		console.log(data))
+	// 		.catch((error) => 
+	// 		console.error("Unable to fetch data:", error));
+	// }
 	
 	let trigramsMap = new Map(Object.entries(trigrams));
 	function getShowTrigramsText(trigramsData) {
-		console.log(trigramsMap);
+		// console.log(trigramsMap);
 		var showText = trigramsMap.get(trigramsData).value;
 		return showText;
 	}
 
 	let hexagramMap = new Map(Object.entries(hexagram));
-	function getShowHexagramText(trigramsData) {
-		var showText = hexagramMap.get(trigramsData).fullName;
-		console.log(showText);
+	function getShowHexagramText(trigramsIdx1, trigramsIdx2, showType='name') {
+		var trigramsData = trigramsIdx1 + trigramsIdx2;
+		console.log("remix:" + trigramsIdx1 + "-" + trigramsIdx2);
+		var hexagramObj = hexagramMap.get(trigramsData)
+		var showText = "";
+		if (showType==='name') {
+			showText = hexagramObj.name;
+		} else {
+			showText = hexagramObj.fullName;
+		}
+
 		return showText;
 	}
 
-	function getShowHexagramShortName(trigramsData) {
-		var showText = hexagramMap.get(trigramsData).name;
-		console.log(showText);
-		return showText;
+	function getHexagramFirstPartResult(type, arrHexagram) {
+		var typeKey = "p";
+		if (type==='Secondary') {
+			typeKey = "s";
+		}
+	
+		var arrGroup = [
+			[[1, 3], [1, 5], [1, 2], [1, 4], [1, 6]],
+			[[3, 1], [3, 5], [3, 2], [3, 4], [3, 6]],
+			[[5, 1], [5, 3], [5, 2], [5, 4], [5, 6]],
+			[[2, 1], [2, 3], [2, 5], [2, 4], [2, 6]],
+			[[4, 1], [4, 3], [4, 5], [4, 2], [4, 6]],
+			[[6, 1], [6, 3], [6, 5], [6, 2], [6, 4]],
+		];
+		
+		for (let groupIdx = 0; groupIdx < arrGroup.length; groupIdx++) {
+			var arrSubGroup = arrGroup[groupIdx];
+			for (var index = 0; index < arrSubGroup.length; index++) {
+				var idx1 = arrSubGroup[index][0];
+				var idx2 = arrSubGroup[index][1];
+				var hexagramTextRemix= getShowHexagramText(arrHexagram[idx1], arrHexagram[idx2]);
+				$('#hexagram_' + typeKey + '_remix_' + idx1 + '_' + idx2).text(hexagramTextRemix);
+			}
+		}
 	}
-  
 
+	function getHexagramSecondPartResult(type, arrHexagram1, arrHexagram2) {
+		var typeKey = "ps";
+		if (type==='Secondary') {
+			typeKey = "sp";
+		}
+	
+		var arrGroup = [
+			[[1, 1], [1, 3], [1, 5], [1, 2], [1, 4], [1, 6]],
+			[[3, 1], [3, 3], [3, 5], [3, 2], [3, 4], [3, 6]],
+			[[5, 1], [5, 3], [5, 5], [5, 2], [5, 4], [5, 6]],
+			[[2, 1], [2, 3], [2, 5], [2, 2], [2, 4], [2, 6]],
+			[[4, 1], [4, 3], [4, 5], [4, 2], [4, 4], [4, 6]],
+			[[6, 1], [6, 3], [6, 5], [6, 2], [6, 4], [6, 6]],
+		];
+		
+		for (let groupIdx = 0; groupIdx < arrGroup.length; groupIdx++) {
+			var arrSubGroup = arrGroup[groupIdx];
+			for (var index = 0; index < arrSubGroup.length; index++) {
+				console.log(arrSubGroup[index]);
+				var idx1 = arrSubGroup[index][0];
+				var idx2 = arrSubGroup[index][1];
+				var hexagramTextRemix= getShowHexagramText(arrHexagram1[idx1], arrHexagram2[idx2]);
+				$('#hexagram_' + typeKey + '_remix_' + idx1 + '_' + idx2).text(hexagramTextRemix);
+			}
+		}
+	}
+
+	
 	/*====================
 		Preloader JS
 	======================*/
@@ -1157,3 +1089,21 @@ const hexagram = {
 	
 	
 })(jQuery);
+
+//列印功能
+function printHtml(html) {
+	var bodyHtml = document.body.innerHTML;
+	document.body.innerHTML = html;
+	window.print();
+	document.body.innerHTML = bodyHtml;
+	window.location.reload(); //列印輸出後更新頁面
+}
+
+function onPrint() {
+	//去除超連結設置
+	$('a').each(function(index) {
+		$(this).replaceWith($(this).html());
+	});
+	var html = $("#printArea").html();
+	printHtml(html);
+}
