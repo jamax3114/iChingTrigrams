@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
 		<!-- Title -->
-        <title>飛行八卦8顆</title>
+        <title>飛行八卦9顆</title>
 		
 		<!-- Favicon -->
         <link rel="icon" href="img/favicon.png">
@@ -107,7 +107,7 @@
 				<div class="bread-inner">
 					<div class="row">
 						<div class="col-12">
-							<h2>飛行八卦 8 顆</h2>
+							<h2>飛行八卦 9 顆</h2>
 						</div>
 					</div>
 				</div>
@@ -122,11 +122,35 @@
 					<div class="row"> 
 						<div class="col-lg-6">
 							<div class="contact-us-left contact-us-form">
-								<h2>8顆</h2>
+								<h2>9顆</h2>
 								<p>請依序選擇</p>
 								<!-- Form -->
-								<form id="form_trigrams_8" class="form" method="post" action="mail/mail.php">
+								<form id="form_trigrams_9" class="form">
 									<div class="row">
+										<!--9-->
+										<div class="col-lg-12">
+											<div class="form-group form-inline">
+												<label class="form-radio-inline">
+													<div>9.</div>
+													<div>
+														<input type="radio" name="chk_9" value="9_0" placeholder="chk_9" required="">
+													</div>
+													<div>陰</div>
+													<div>
+														<img src="img/1coin_0.png">
+													</div>
+												</label>
+												<label class="form-radio-inline">
+													<div>
+														<input type="radio" name="chk_9" value="9_1" placeholder="chk_9" required="">
+													</div>
+													<div>陽</div>
+													<div>
+														<img src="img/1coin_1.png">
+													</div>
+												</label>
+											</div>
+										</div>
 										<!--8-->
 										<div class="col-lg-12">
 											<div class="form-group form-inline">
@@ -321,7 +345,7 @@
 										</div>
 										<div class="col-6">
 											<div class="form-group login-btn">
-												<button class="btn" id="btn_preview_trigrams_8" type="button">下一步，預覽</button>
+												<button class="btn" id="btn_preview_trigrams_9" type="button">下一步，預覽</button>
 											</div>
 										</div>
 									</div>
@@ -334,8 +358,27 @@
 								<h2>預覽結果</h2>
 								<p>請確認選擇是否正確</p>
 								<!-- Form -->
-								<form id="form_trigrams_8_preview" class="form" method="post" action="mail/mail.php">
+								<form id="form_trigrams_9_preview" class="form">
 									<div class="row">
+										<!--9-->
+										<div class="col-lg-12">
+											<div class="form-group form-inline">
+												<label class="form-radio-inline d-none" id="chked_9_0">
+													<div>9.</div>
+													<div>陰</div>
+													<div>
+														<img src="img/1coin_0.png">
+													</div>
+												</label>
+												<label class="form-radio-inline d-none" id="chked_9_1">
+													<div>9.</div>
+													<div>陽</div>
+													<div>
+														<img src="img/1coin_1.png">
+													</div>
+												</label>
+											</div>
+										</div>
 										<!--8-->
 											<div class="col-lg-12">
 											<div class="form-group form-inline">
@@ -490,7 +533,7 @@
 										</div>
 										<div class="col-6">
 											<div class="form-group login-btn">
-												<button class="btn d-none" id="btn_execute_trigrams_8" type="button">確定，取得結果</button>
+												<button class="btn d-none" id="btn_execute_trigrams_9" type="button">確定，取得結果</button>
 											</div>
 										</div>
 									</div>
@@ -508,7 +551,7 @@
 			<div id="printArea" class="container" style='page-break-before: always'>
 				<div class="inner">
 					<div class="col-lg-12 col-md-12 col-12">
-						<form class="form" action="#">
+						<form class="form">
 							<div class="appointment-inner">
 								<div class="row">
 									<div class="col-lg-12 col-md-12 col-12">
@@ -550,6 +593,13 @@
 										<div class="hexagram-text">-</div>
 										<div class="hexagram-text" id="hexagram_p_56">卦</div>
 									</div>
+									<div class="row">
+										<div class="hexagram-title hexagram-title-none">原卦：</div>
+										<span class="hexagram-number" id="hexagram_p_idx_7">0</span>
+										<div class="hexagram-number" id="hexagram_p_idx_8">0</div>
+										<div class="hexagram-text">-</div>
+										<div class="hexagram-text" id="hexagram_p_78">卦</div>
+									</div>
 								</div>
 								<div class="hexagram-secondary">
 									<div class="row">
@@ -573,6 +623,13 @@
 										<div class="hexagram-text">-</div>
 										<div class="hexagram-text" id="hexagram_s_56">卦</div>
 									</div>
+									<div class="row">
+										<div class="hexagram-title hexagram-title-none">原卦：</div>
+										<span class="hexagram-number" id="hexagram_s_idx_7">0</span>
+										<div class="hexagram-number" id="hexagram_s_idx_8">0</div>
+										<div class="hexagram-text">-</div>
+										<div class="hexagram-text" id="hexagram_s_78">卦</div>
+									</div>
 								</div>
 							</div>
 							<div class="appointment-inner hexagram-section hexagram-inner">
@@ -580,23 +637,38 @@
 									<div class="hexagram-text hexagram-group" id="hexagram_p_remix_group_1">
 										<div id="hexagram_p_remix_1_3">卦</div>
 										<div id="hexagram_p_remix_1_5">卦</div>
+										<div id="hexagram_p_remix_1_7">卦</div>
 										<div id="hexagram_p_remix_1_2">卦</div>
 										<div id="hexagram_p_remix_1_4">卦</div>
 										<div id="hexagram_p_remix_1_6">卦</div>
+										<div id="hexagram_p_remix_1_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_p_remix_group_3">
 										<div id="hexagram_p_remix_3_1">卦</div>
 										<div id="hexagram_p_remix_3_5">卦</div>
+										<div id="hexagram_p_remix_3_7">卦</div>
 										<div id="hexagram_p_remix_3_2">卦</div>
 										<div id="hexagram_p_remix_3_4">卦</div>
 										<div id="hexagram_p_remix_3_6">卦</div>
+										<div id="hexagram_p_remix_3_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_p_remix_group_5">
 										<div id="hexagram_p_remix_5_1">卦</div>
 										<div id="hexagram_p_remix_5_3">卦</div>
+										<div id="hexagram_p_remix_5_7">卦</div>
 										<div id="hexagram_p_remix_5_2">卦</div>
 										<div id="hexagram_p_remix_5_4">卦</div>
 										<div id="hexagram_p_remix_5_6">卦</div>
+										<div id="hexagram_p_remix_5_8">卦</div>
+									</div>
+									<div class="hexagram-text hexagram-group" id="hexagram_p_remix_group_7">
+										<div id="hexagram_p_remix_7_1">卦</div>
+										<div id="hexagram_p_remix_7_3">卦</div>
+										<div id="hexagram_p_remix_7_5">卦</div>
+										<div id="hexagram_p_remix_7_2">卦</div>
+										<div id="hexagram_p_remix_7_4">卦</div>
+										<div id="hexagram_p_remix_7_6">卦</div>
+										<div id="hexagram_p_remix_7_8">卦</div>
 									</div>
 								</div>
 								<div class="hexagram-group-border">
@@ -604,46 +676,75 @@
 										<div id="hexagram_p_remix_2_1">卦</div>
 										<div id="hexagram_p_remix_2_3">卦</div>
 										<div id="hexagram_p_remix_2_5">卦</div>
+										<div id="hexagram_p_remix_2_7">卦</div>
 										<div id="hexagram_p_remix_2_4">卦</div>
 										<div id="hexagram_p_remix_2_6">卦</div>
+										<div id="hexagram_p_remix_2_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_p_remix_group_4">
 										<div id="hexagram_p_remix_4_1">卦</div>
 										<div id="hexagram_p_remix_4_3">卦</div>
 										<div id="hexagram_p_remix_4_5">卦</div>
+										<div id="hexagram_p_remix_4_7">卦</div>
 										<div id="hexagram_p_remix_4_2">卦</div>
 										<div id="hexagram_p_remix_4_6">卦</div>
+										<div id="hexagram_p_remix_4_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_p_remix_group_6">
 										<div id="hexagram_p_remix_6_1">卦</div>
 										<div id="hexagram_p_remix_6_3">卦</div>
 										<div id="hexagram_p_remix_6_5">卦</div>
+										<div id="hexagram_p_remix_6_7">卦</div>
 										<div id="hexagram_p_remix_6_2">卦</div>
 										<div id="hexagram_p_remix_6_4">卦</div>
+										<div id="hexagram_p_remix_6_8">卦</div>
+									</div>
+									<div class="hexagram-text hexagram-group" id="hexagram_p_remix_group_8">
+										<div id="hexagram_p_remix_8_1">卦</div>
+										<div id="hexagram_p_remix_8_3">卦</div>
+										<div id="hexagram_p_remix_8_5">卦</div>
+										<div id="hexagram_p_remix_8_7">卦</div>
+										<div id="hexagram_p_remix_8_2">卦</div>
+										<div id="hexagram_p_remix_8_4">卦</div>
+										<div id="hexagram_p_remix_8_6">卦</div>
 									</div>
 								</div>
 								<div>
 									<div class="hexagram-text hexagram-group" id="hexagram_s_remix_group_1">
 										<div id="hexagram_s_remix_1_3">卦</div>
 										<div id="hexagram_s_remix_1_5">卦</div>
+										<div id="hexagram_s_remix_1_7">卦</div>
 										<div id="hexagram_s_remix_1_2">卦</div>
 										<div id="hexagram_s_remix_1_4">卦</div>
-										<div id="hexagram_s_remix_1_6">卦</div>		
+										<div id="hexagram_s_remix_1_6">卦</div>
+										<div id="hexagram_s_remix_1_8">卦</div>
 									</div>
-									
 									<div class="hexagram-text hexagram-group" id="hexagram_s_remix_group_3">
 										<div id="hexagram_s_remix_3_1">卦</div>
 										<div id="hexagram_s_remix_3_5">卦</div>
+										<div id="hexagram_s_remix_3_7">卦</div>
 										<div id="hexagram_s_remix_3_2">卦</div>
 										<div id="hexagram_s_remix_3_4">卦</div>
 										<div id="hexagram_s_remix_3_6">卦</div>
+										<div id="hexagram_s_remix_3_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_s_remix_group_5">
 										<div id="hexagram_s_remix_5_1">卦</div>
 										<div id="hexagram_s_remix_5_3">卦</div>
+										<div id="hexagram_s_remix_5_7">卦</div>
 										<div id="hexagram_s_remix_5_2">卦</div>
 										<div id="hexagram_s_remix_5_4">卦</div>
 										<div id="hexagram_s_remix_5_6">卦</div>
+										<div id="hexagram_s_remix_5_8">卦</div>
+									</div>
+									<div class="hexagram-text hexagram-group" id="hexagram_s_remix_group_7">
+										<div id="hexagram_s_remix_7_1">卦</div>
+										<div id="hexagram_s_remix_7_3">卦</div>
+										<div id="hexagram_s_remix_7_5">卦</div>
+										<div id="hexagram_s_remix_7_2">卦</div>
+										<div id="hexagram_s_remix_7_4">卦</div>
+										<div id="hexagram_s_remix_7_6">卦</div>
+										<div id="hexagram_s_remix_7_8">卦</div>
 									</div>
 								</div>
 								<div class="hexagram-group-border">
@@ -651,22 +752,37 @@
 										<div id="hexagram_s_remix_2_1">卦</div>
 										<div id="hexagram_s_remix_2_3">卦</div>
 										<div id="hexagram_s_remix_2_5">卦</div>
+										<div id="hexagram_s_remix_2_7">卦</div>
 										<div id="hexagram_s_remix_2_4">卦</div>
 										<div id="hexagram_s_remix_2_6">卦</div>
+										<div id="hexagram_s_remix_2_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_s_remix_group_4">
 										<div id="hexagram_s_remix_4_1">卦</div>
 										<div id="hexagram_s_remix_4_3">卦</div>
 										<div id="hexagram_s_remix_4_5">卦</div>
+										<div id="hexagram_s_remix_4_7">卦</div>
 										<div id="hexagram_s_remix_4_2">卦</div>
 										<div id="hexagram_s_remix_4_6">卦</div>
+										<div id="hexagram_s_remix_4_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_s_remix_group_6">
 										<div id="hexagram_s_remix_6_1">卦</div>
 										<div id="hexagram_s_remix_6_3">卦</div>
 										<div id="hexagram_s_remix_6_5">卦</div>
+										<div id="hexagram_s_remix_6_7">卦</div>
 										<div id="hexagram_s_remix_6_2">卦</div>
 										<div id="hexagram_s_remix_6_4">卦</div>
+										<div id="hexagram_s_remix_6_8">卦</div>
+									</div>
+									<div class="hexagram-text hexagram-group" id="hexagram_s_remix_group_8">
+										<div id="hexagram_s_remix_8_1">卦</div>
+										<div id="hexagram_s_remix_8_3">卦</div>
+										<div id="hexagram_s_remix_8_5">卦</div>
+										<div id="hexagram_s_remix_8_7">卦</div>
+										<div id="hexagram_s_remix_8_2">卦</div>
+										<div id="hexagram_s_remix_8_4">卦</div>
+										<div id="hexagram_s_remix_8_6">卦</div>
 									</div>
 								</div>
 								<div>
@@ -674,25 +790,41 @@
 										<div id="hexagram_ps_remix_1_1">卦</div>
 										<div id="hexagram_ps_remix_1_3">卦</div>
 										<div id="hexagram_ps_remix_1_5">卦</div>
+										<div id="hexagram_ps_remix_1_7">卦</div>
 										<div id="hexagram_ps_remix_1_2">卦</div>
 										<div id="hexagram_ps_remix_1_4">卦</div>
 										<div id="hexagram_ps_remix_1_6">卦</div>
+										<div id="hexagram_ps_remix_1_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_ps_remix_group_3">
 										<div id="hexagram_ps_remix_3_1">卦</div>
 										<div id="hexagram_ps_remix_3_3">卦</div>
 										<div id="hexagram_ps_remix_3_5">卦</div>
+										<div id="hexagram_ps_remix_3_7">卦</div>
 										<div id="hexagram_ps_remix_3_2">卦</div>
 										<div id="hexagram_ps_remix_3_4">卦</div>
 										<div id="hexagram_ps_remix_3_6">卦</div>
+										<div id="hexagram_ps_remix_3_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_ps_remix_group_5">
 										<div id="hexagram_ps_remix_5_1">卦</div>
 										<div id="hexagram_ps_remix_5_3">卦</div>
 										<div id="hexagram_ps_remix_5_5">卦</div>
+										<div id="hexagram_ps_remix_5_7">卦</div>
 										<div id="hexagram_ps_remix_5_2">卦</div>
 										<div id="hexagram_ps_remix_5_4">卦</div>
 										<div id="hexagram_ps_remix_5_6">卦</div>
+										<div id="hexagram_ps_remix_5_8">卦</div>
+									</div>
+									<div class="hexagram-text hexagram-group" id="hexagram_ps_remix_group_7">
+										<div id="hexagram_ps_remix_7_1">卦</div>
+										<div id="hexagram_ps_remix_7_3">卦</div>
+										<div id="hexagram_ps_remix_7_5">卦</div>
+										<div id="hexagram_ps_remix_7_7">卦</div>
+										<div id="hexagram_ps_remix_7_2">卦</div>
+										<div id="hexagram_ps_remix_7_4">卦</div>
+										<div id="hexagram_ps_remix_7_6">卦</div>
+										<div id="hexagram_ps_remix_7_8">卦</div>
 									</div>
 								</div>
 								<div class="hexagram-group-border">
@@ -700,25 +832,41 @@
 										<div id="hexagram_ps_remix_2_1">卦</div>
 										<div id="hexagram_ps_remix_2_3">卦</div>
 										<div id="hexagram_ps_remix_2_5">卦</div>
+										<div id="hexagram_ps_remix_2_7">卦</div>
 										<div id="hexagram_ps_remix_2_2">卦</div>
 										<div id="hexagram_ps_remix_2_4">卦</div>
 										<div id="hexagram_ps_remix_2_6">卦</div>
+										<div id="hexagram_ps_remix_2_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_ps_remix_group_4">
 										<div id="hexagram_ps_remix_4_1">卦</div>
 										<div id="hexagram_ps_remix_4_3">卦</div>
 										<div id="hexagram_ps_remix_4_5">卦</div>
+										<div id="hexagram_ps_remix_4_7">卦</div>
 										<div id="hexagram_ps_remix_4_2">卦</div>
 										<div id="hexagram_ps_remix_4_4">卦</div>
 										<div id="hexagram_ps_remix_4_6">卦</div>
+										<div id="hexagram_ps_remix_4_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_ps_remix_group_6">
 										<div id="hexagram_ps_remix_6_1">卦</div>
 										<div id="hexagram_ps_remix_6_3">卦</div>
 										<div id="hexagram_ps_remix_6_5">卦</div>
+										<div id="hexagram_ps_remix_6_7">卦</div>
 										<div id="hexagram_ps_remix_6_2">卦</div>
 										<div id="hexagram_ps_remix_6_4">卦</div>
 										<div id="hexagram_ps_remix_6_6">卦</div>
+										<div id="hexagram_ps_remix_6_8">卦</div>
+									</div>
+									<div class="hexagram-text hexagram-group" id="hexagram_ps_remix_group_8">
+										<div id="hexagram_ps_remix_8_1">卦</div>
+										<div id="hexagram_ps_remix_8_3">卦</div>
+										<div id="hexagram_ps_remix_8_5">卦</div>
+										<div id="hexagram_ps_remix_8_7">卦</div>
+										<div id="hexagram_ps_remix_8_2">卦</div>
+										<div id="hexagram_ps_remix_8_4">卦</div>
+										<div id="hexagram_ps_remix_8_6">卦</div>
+										<div id="hexagram_ps_remix_8_8">卦</div>
 									</div>
 								</div>
 								<div>
@@ -726,25 +874,41 @@
 										<div id="hexagram_sp_remix_1_1">卦</div>
 										<div id="hexagram_sp_remix_1_3">卦</div>
 										<div id="hexagram_sp_remix_1_5">卦</div>
+										<div id="hexagram_sp_remix_1_7">卦</div>
 										<div id="hexagram_sp_remix_1_2">卦</div>
 										<div id="hexagram_sp_remix_1_4">卦</div>
 										<div id="hexagram_sp_remix_1_6">卦</div>
+										<div id="hexagram_sp_remix_1_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_sp_remix_group_3">
 										<div id="hexagram_sp_remix_3_1">卦</div>
 										<div id="hexagram_sp_remix_3_3">卦</div>
 										<div id="hexagram_sp_remix_3_5">卦</div>
+										<div id="hexagram_sp_remix_3_7">卦</div>
 										<div id="hexagram_sp_remix_3_2">卦</div>
 										<div id="hexagram_sp_remix_3_4">卦</div>
 										<div id="hexagram_sp_remix_3_6">卦</div>
+										<div id="hexagram_sp_remix_3_8">卦</div>
 									</div>
-									<div class="hexagram-text hexagram-group" id="hexagram_sp_remix_group_15">
+									<div class="hexagram-text hexagram-group" id="hexagram_sp_remix_group_5">
 										<div id="hexagram_sp_remix_5_1">卦</div>
 										<div id="hexagram_sp_remix_5_3">卦</div>
 										<div id="hexagram_sp_remix_5_5">卦</div>
+										<div id="hexagram_sp_remix_5_7">卦</div>
 										<div id="hexagram_sp_remix_5_2">卦</div>
 										<div id="hexagram_sp_remix_5_4">卦</div>
 										<div id="hexagram_sp_remix_5_6">卦</div>
+										<div id="hexagram_sp_remix_5_8">卦</div>
+									</div>
+									<div class="hexagram-text hexagram-group" id="hexagram_sp_remix_group_7">
+										<div id="hexagram_sp_remix_7_1">卦</div>
+										<div id="hexagram_sp_remix_7_3">卦</div>
+										<div id="hexagram_sp_remix_7_5">卦</div>
+										<div id="hexagram_sp_remix_7_7">卦</div>
+										<div id="hexagram_sp_remix_7_2">卦</div>
+										<div id="hexagram_sp_remix_7_4">卦</div>
+										<div id="hexagram_sp_remix_7_6">卦</div>
+										<div id="hexagram_sp_remix_7_8">卦</div>
 									</div>
 								</div>
 								<div>
@@ -752,26 +916,42 @@
 										<div id="hexagram_sp_remix_2_1">卦</div>
 										<div id="hexagram_sp_remix_2_3">卦</div>
 										<div id="hexagram_sp_remix_2_5">卦</div>
+										<div id="hexagram_sp_remix_2_7">卦</div>
 										<div id="hexagram_sp_remix_2_2">卦</div>
 										<div id="hexagram_sp_remix_2_4">卦</div>
 										<div id="hexagram_sp_remix_2_6">卦</div>
+										<div id="hexagram_sp_remix_2_8">卦</div>
 									</div>
 									<div class="hexagram-text hexagram-group" id="hexagram_sp_remix_group_4">
 										<div id="hexagram_sp_remix_4_1">卦</div>
 										<div id="hexagram_sp_remix_4_3">卦</div>
 										<div id="hexagram_sp_remix_4_5">卦</div>
+										<div id="hexagram_sp_remix_4_7">卦</div>
 										<div id="hexagram_sp_remix_4_2">卦</div>
 										<div id="hexagram_sp_remix_4_4">卦</div>
 										<div id="hexagram_sp_remix_4_6">卦</div>
+										<div id="hexagram_sp_remix_4_8">卦</div>
 									</div>
 									
 									<div class="hexagram-text hexagram-group" id="hexagram_sp_remix_group_6">
 										<div id="hexagram_sp_remix_6_1">卦</div>
 										<div id="hexagram_sp_remix_6_3">卦</div>
 										<div id="hexagram_sp_remix_6_5">卦</div>
+										<div id="hexagram_sp_remix_6_7">卦</div>
 										<div id="hexagram_sp_remix_6_2">卦</div>
 										<div id="hexagram_sp_remix_6_4">卦</div>
 										<div id="hexagram_sp_remix_6_6">卦</div>
+										<div id="hexagram_sp_remix_6_8">卦</div>
+									</div>
+									<div class="hexagram-text hexagram-group" id="hexagram_sp_remix_group_8">
+										<div id="hexagram_sp_remix_8_1">卦</div>
+										<div id="hexagram_sp_remix_8_3">卦</div>
+										<div id="hexagram_sp_remix_8_5">卦</div>
+										<div id="hexagram_sp_remix_8_7">卦</div>
+										<div id="hexagram_sp_remix_8_2">卦</div>
+										<div id="hexagram_sp_remix_8_4">卦</div>
+										<div id="hexagram_sp_remix_8_6">卦</div>
+										<div id="hexagram_sp_remix_8_8">卦</div>
 									</div>
 								</div>
 							</div>	

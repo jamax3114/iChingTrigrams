@@ -892,14 +892,14 @@ const hexagram = {
 		// });
 		
 		
-		
-		$('#btn_preview').click(function () {
+		//八顆
+        $('#btn_preview_trigrams_8').click(function () {
 			var trigramsPrimaryList = [];
 			var trigramsSecondaryList = [];
 			$('#form_trigrams_8_preview > .form-radio-inline').addClass('d-none');
-			console.log('btn_preview');
-			var formDomTrigrams8 = $('#form_trigrams_8');			
-			formDomTrigrams8.find('input:radio').each(function () {
+			console.log('btn_preview_trigrams_8');
+			var formDomTrigrams = $('#form_trigrams_8');			
+			formDomTrigrams.find('input:radio').each(function () {
 				if ($(this).prop('checked')) {
 					// console.log($(this).val());
 					// console.log('#chked_'+$(this).val());
@@ -923,14 +923,48 @@ const hexagram = {
 			// console.log(trigramsPrimaryList);
 			// console.log("=== 副卦 8~1 ===");
 			// console.log(trigramsSecondaryList);
-			//console.log("=== 1~8 ===");
-			//console.log(trigramsList);
 			
-			getHexagramPrimary(trigramsPrimaryList, trigramsSecondaryList);
-			$('#btn_execute').removeClass('d-none');
+			getHexagramPrimary(8, trigramsPrimaryList, trigramsSecondaryList);
+			$('#btn_execute_trigrams_8').removeClass('d-none');
 		});
 
-		$('#btn_execute').click(function () {
+        //九顆
+		$('#btn_preview_trigrams_9').click(function () {
+			var trigramsPrimaryList = [];
+			var trigramsSecondaryList = [];
+			$('#form_trigrams_9_preview > .form-radio-inline').addClass('d-none');
+			console.log('btn_preview_trigrams_9');
+			var formDomTrigrams= $('#form_trigrams_9');			
+			formDomTrigrams.find('input:radio').each(function () {
+				if ($(this).prop('checked')) {
+					// console.log($(this).val());
+					// console.log('#chked_'+$(this).val());
+					var arrItem = $(this).val().split("_");
+					trigramsPrimaryList.push(arrItem[1]);
+					$('#chked_'+$(this).val()).removeClass('d-none');
+				} 
+				else {
+					var arrItem = $(this).val().split("_");
+					trigramsSecondaryList.push(arrItem[1]);
+					$('#chked_'+$(this).val()).addClass('d-none');
+				}
+			});
+
+			if (trigramsPrimaryList.length<8) {
+				$('#form_trigrams_9_preview .form-radio-inline').addClass('d-none');
+				alert("請選滿9顆");
+				return false;
+			}
+			console.log("=== 原卦 9~1 ===");
+			console.log(trigramsPrimaryList);
+			console.log("=== 副卦 9~1 ===");
+            console.log(trigramsSecondaryList);
+			
+			getHexagramPrimary(9, trigramsPrimaryList, trigramsSecondaryList);
+			$('#btn_execute_trigrams_9').removeClass('d-none');
+		});
+
+		$('#btn_execute_trigrams_8, #btn_execute_trigrams_9').click(function () {
 			console.log('btn_execute');
 			$('#hexagram_result').removeClass('d-none');
 			goResult();
@@ -944,85 +978,94 @@ const hexagram = {
 			return false;
 		}
 
-		function getHexagramPrimary(trigramsPrimaryList, trigramsSecondaryList) {
+		function getHexagramPrimary(trigramsType, trigramsPrimaryList, trigramsSecondaryList) {
+            var index = 0;
+            if (parseInt(trigramsType)===9) {
+                index = 1;
+            }
 			//Primary
 			var arrHexagramPrimary = [];
-			arrHexagramPrimary[1] = trigramsPrimaryList[2] + trigramsPrimaryList[3] + trigramsPrimaryList[4];
-			arrHexagramPrimary[2] = trigramsPrimaryList[5] + trigramsPrimaryList[6] + trigramsPrimaryList[7];
+            //hexagram_p_12
+			arrHexagramPrimary[1] = trigramsPrimaryList[2+index] + trigramsPrimaryList[3+index] + trigramsPrimaryList[4+index];
+			arrHexagramPrimary[2] = trigramsPrimaryList[5+index] + trigramsPrimaryList[6+index] + trigramsPrimaryList[7+index];
 			$('#hexagram_p_idx_1').text(getShowTrigramsText(arrHexagramPrimary[1]));
 			$('#hexagram_p_idx_2').text(getShowTrigramsText(arrHexagramPrimary[2]));
-			//hexagram_p_12
 			var hexagramPrimaryText_12 = getShowHexagramText(arrHexagramPrimary[1], arrHexagramPrimary[2], 'fullName');
 			$('#hexagram_p_12').text(hexagramPrimaryText_12);
 
-			arrHexagramPrimary[3] = trigramsPrimaryList[1] + trigramsPrimaryList[2] + trigramsPrimaryList[3];
-			arrHexagramPrimary[4] = trigramsPrimaryList[4] + trigramsPrimaryList[5] + trigramsPrimaryList[6];
+            //hexagram_p_34
+			arrHexagramPrimary[3] = trigramsPrimaryList[1+index] + trigramsPrimaryList[2+index] + trigramsPrimaryList[3+index];
+			arrHexagramPrimary[4] = trigramsPrimaryList[4+index] + trigramsPrimaryList[5+index] + trigramsPrimaryList[6+index];
 			$('#hexagram_p_idx_3').text(getShowTrigramsText(arrHexagramPrimary[3]));
 			$('#hexagram_p_idx_4').text(getShowTrigramsText(arrHexagramPrimary[4]));
-			//hexagram_p_34
 			var hexagramPrimaryText_34 = getShowHexagramText(arrHexagramPrimary[3], arrHexagramPrimary[4], 'fullName');
 			$('#hexagram_p_34').text(hexagramPrimaryText_34);
 
-			arrHexagramPrimary[5] = trigramsPrimaryList[0] + trigramsPrimaryList[1] + trigramsPrimaryList[2];
-			arrHexagramPrimary[6] = trigramsPrimaryList[3] + trigramsPrimaryList[4] + trigramsPrimaryList[5];
+            //hexagram_p_56
+			arrHexagramPrimary[5] = trigramsPrimaryList[0+index] + trigramsPrimaryList[1+index] + trigramsPrimaryList[2+index];
+			arrHexagramPrimary[6] = trigramsPrimaryList[3+index] + trigramsPrimaryList[4+index] + trigramsPrimaryList[5+index];
 			$('#hexagram_p_idx_5').text(getShowTrigramsText(arrHexagramPrimary[5]));
 			$('#hexagram_p_idx_6').text(getShowTrigramsText(arrHexagramPrimary[6]));
-			//hexagram_p_56
 			var hexagramPrimaryText_56 = getShowHexagramText(arrHexagramPrimary[5], arrHexagramPrimary[6], 'fullName');
 			$('#hexagram_p_56').text(hexagramPrimaryText_56);
+            
+            if (parseInt(trigramsType)===9) {
+                //hexagram_p_78
+                arrHexagramPrimary[7] = trigramsPrimaryList[0] + trigramsPrimaryList[1] + trigramsPrimaryList[2];
+                arrHexagramPrimary[8] = trigramsPrimaryList[3] + trigramsPrimaryList[4] + trigramsPrimaryList[5];
+                $('#hexagram_p_idx_7').text(getShowTrigramsText(arrHexagramPrimary[7]));
+                $('#hexagram_p_idx_8').text(getShowTrigramsText(arrHexagramPrimary[8]));
+                var hexagramPrimaryText_78 = getShowHexagramText(arrHexagramPrimary[7], arrHexagramPrimary[8], 'fullName');
+                $('#hexagram_p_78').text(hexagramPrimaryText_78);
+            }
 			
 			//Secondary
 			var arrHexagramSecondary = [];
-			arrHexagramSecondary[1] = trigramsSecondaryList[2] + trigramsSecondaryList[3] + trigramsSecondaryList[4];
-			arrHexagramSecondary[2] = trigramsSecondaryList[5] + trigramsSecondaryList[6] + trigramsSecondaryList[7];
+            //hexagram_s_12
+			arrHexagramSecondary[1] = trigramsSecondaryList[2+index] + trigramsSecondaryList[3+index] + trigramsSecondaryList[4+index];
+			arrHexagramSecondary[2] = trigramsSecondaryList[5+index] + trigramsSecondaryList[6+index] + trigramsSecondaryList[7+index];
 			$('#hexagram_s_idx_1').text(getShowTrigramsText(arrHexagramSecondary[1]));
 			$('#hexagram_s_idx_2').text(getShowTrigramsText(arrHexagramSecondary[2]));
-			//hexagram_s_12
 			var hexagramSecondaryText_12 = getShowHexagramText(arrHexagramSecondary[1], arrHexagramSecondary[2], 'fullName');
 			$('#hexagram_s_12').text(hexagramSecondaryText_12);
 
-			arrHexagramSecondary[3] = trigramsSecondaryList[1] + trigramsSecondaryList[2] + trigramsSecondaryList[3];
-			arrHexagramSecondary[4] = trigramsSecondaryList[4] + trigramsSecondaryList[5] + trigramsSecondaryList[6];
+            //hexagram_s_34
+			arrHexagramSecondary[3] = trigramsSecondaryList[1+index] + trigramsSecondaryList[2+index] + trigramsSecondaryList[3+index];
+			arrHexagramSecondary[4] = trigramsSecondaryList[4+index] + trigramsSecondaryList[5+index] + trigramsSecondaryList[6+index];
 			$('#hexagram_s_idx_3').text(getShowTrigramsText(arrHexagramSecondary[3]));
 			$('#hexagram_s_idx_4').text(getShowTrigramsText(arrHexagramSecondary[4]));
-			//hexagram_s_34
 			var hexagramSecondaryText_34 = getShowHexagramText(arrHexagramSecondary[3], arrHexagramSecondary[4], 'fullName');
 			$('#hexagram_s_34').text(hexagramSecondaryText_34);
 
-			arrHexagramSecondary[5] = trigramsSecondaryList[0] + trigramsSecondaryList[1] + trigramsSecondaryList[2];
-			arrHexagramSecondary[6] = trigramsSecondaryList[3] + trigramsSecondaryList[4] + trigramsSecondaryList[5];
+            //hexagram_s_56
+			arrHexagramSecondary[5] = trigramsSecondaryList[0+index] + trigramsSecondaryList[1+index] + trigramsSecondaryList[2+index];
+			arrHexagramSecondary[6] = trigramsSecondaryList[3+index] + trigramsSecondaryList[4+index] + trigramsSecondaryList[5+index];
 			$('#hexagram_s_idx_5').text(getShowTrigramsText(arrHexagramSecondary[5]));
 			$('#hexagram_s_idx_6').text(getShowTrigramsText(arrHexagramSecondary[6]));
-			//hexagram_s_12
 			var hexagramSecondaryText_56 = getShowHexagramText(arrHexagramSecondary[5], arrHexagramSecondary[6], 'fullName');
 			$('#hexagram_s_56').text(hexagramSecondaryText_56);
 
+            if (parseInt(trigramsType)===9) {
+                //hexagram_s_78
+                arrHexagramSecondary[7] = trigramsSecondaryList[0] + trigramsSecondaryList[1] + trigramsSecondaryList[2];
+                arrHexagramSecondary[8] = trigramsSecondaryList[3] + trigramsSecondaryList[4] + trigramsSecondaryList[5];
+                $('#hexagram_s_idx_7').text(getShowTrigramsText(arrHexagramSecondary[7]));
+                $('#hexagram_s_idx_8').text(getShowTrigramsText(arrHexagramSecondary[8]));
+                var hexagramSecondaryText_78 = getShowHexagramText(arrHexagramSecondary[7], arrHexagramSecondary[8], 'fullName');
+                $('#hexagram_s_78').text(hexagramSecondaryText_78);
+            }
+
 			//hexagram_p_remix
-			getHexagramFirstPartResult('Primary', arrHexagramPrimary);
+			getHexagramFirstPartResult(trigramsType, 'Primary', arrHexagramPrimary);
 			//hexagram_s_remix
-			getHexagramFirstPartResult('Secondary', arrHexagramSecondary);
+			getHexagramFirstPartResult(trigramsType, 'Secondary', arrHexagramSecondary);
 			//hexagram_ps_remix
-			getHexagramSecondPartResult('Primary', arrHexagramPrimary, arrHexagramSecondary);
+			getHexagramSecondPartResult(trigramsType, 'Primary', arrHexagramPrimary, arrHexagramSecondary);
 			//hexagram_sp_remix
-			getHexagramSecondPartResult('Secondary', arrHexagramSecondary, arrHexagramPrimary);
+			getHexagramSecondPartResult(trigramsType, 'Secondary', arrHexagramSecondary, arrHexagramPrimary);
 		}
 
 	});
-
-	// function fetchJSONData() {
-	// 	fetch("./data/yichin.json")
-	// 		.then((res) => {
-	// 			if (!res.ok) {
-	// 				throw new Error
-	// 					(`HTTP error! Status: ${res.status}`);
-	// 			}
-	// 			return res.json();
-	// 		})
-	// 		.then((data) => 
-	// 		console.log(data))
-	// 		.catch((error) => 
-	// 		console.error("Unable to fetch data:", error));
-	// }
 	
 	let trigramsMap = new Map(Object.entries(trigrams));
 	function getShowTrigramsText(trigramsData) {
@@ -1045,9 +1088,9 @@ const hexagram = {
 		return showText;
 	}
 
-	function getHexagramFirstPartResult(type, arrHexagram) {
+	function getHexagramFirstPartResult(trigramsType, showType, arrHexagram) {
 		var typeKey = "p";
-		if (type==='Secondary') {
+		if (showType==='Secondary') {
 			typeKey = "s";
 		}
 	
@@ -1059,6 +1102,19 @@ const hexagram = {
 			[[4, 1], [4, 3], [4, 5], [4, 2], [4, 6]],
 			[[6, 1], [6, 3], [6, 5], [6, 2], [6, 4]],
 		];
+
+        if (parseInt(trigramsType)===9) {
+            arrGroup = [
+                [[1, 3], [1, 5], [1, 7], [1, 2], [1, 4], [1, 6], [1, 8]],
+                [[3, 1], [3, 5], [3, 7], [3, 2], [3, 4], [3, 6], [3, 8]],
+                [[5, 1], [5, 3], [5, 7], [5, 2], [5, 4], [5, 6], [5, 8]],
+                [[7, 1], [7, 3], [7, 5], [7, 2], [7, 4], [7, 6], [7, 8]],
+                [[2, 1], [2, 3], [2, 5], [2, 7], [2, 4], [2, 6], [2, 8]],
+                [[4, 1], [4, 3], [4, 5], [4, 7], [4, 2], [4, 6], [4, 8]],
+                [[6, 1], [6, 3], [6, 5], [6, 7], [6, 2], [6, 4], [6, 8]],
+                [[8, 1], [8, 3], [8, 5], [8, 7], [8, 2], [8, 4], [8, 6]],
+            ];
+        }
 		
 		for (let groupIdx = 0; groupIdx < arrGroup.length; groupIdx++) {
 			var arrSubGroup = arrGroup[groupIdx];
@@ -1071,9 +1127,9 @@ const hexagram = {
 		}
 	}
 
-	function getHexagramSecondPartResult(type, arrHexagram1, arrHexagram2) {
+	function getHexagramSecondPartResult(trigramsType, showType, arrHexagram1, arrHexagram2) {
 		var typeKey = "ps";
-		if (type==='Secondary') {
+		if (showType==='Secondary') {
 			typeKey = "sp";
 		}
 	
@@ -1085,6 +1141,19 @@ const hexagram = {
 			[[4, 1], [4, 3], [4, 5], [4, 2], [4, 4], [4, 6]],
 			[[6, 1], [6, 3], [6, 5], [6, 2], [6, 4], [6, 6]],
 		];
+
+        if (parseInt(trigramsType)===9) {
+            arrGroup = [
+                [[1, 1], [1, 3], [1, 5], [1, 7], [1, 2], [1, 4], [1, 6], [1, 8]],
+                [[3, 1], [3, 3], [3, 5], [3, 7], [3, 2], [3, 4], [3, 6], [3, 8]],
+                [[5, 1], [5, 3], [5, 5], [5, 7], [5, 2], [5, 4], [5, 6], [5, 8]],
+                [[7, 1], [7, 3], [7, 5], [7, 7], [7, 2], [7, 4], [7, 6], [7, 8]],
+                [[2, 1], [2, 3], [2, 5], [2, 7], [2, 2], [2, 4], [2, 6], [2, 8]],
+                [[4, 1], [4, 3], [4, 5], [4, 7], [4, 2], [4, 4], [4, 6], [4, 8]],
+                [[6, 1], [6, 3], [6, 5], [6, 7], [6, 2], [6, 4], [6, 6], [6, 8]],
+                [[8, 1], [8, 3], [8, 5], [8, 7], [8, 2], [8, 4], [8, 6], [8, 8]],
+            ];
+        }
 		
 		for (let groupIdx = 0; groupIdx < arrGroup.length; groupIdx++) {
 			var arrSubGroup = arrGroup[groupIdx];

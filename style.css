@@ -2859,24 +2859,24 @@ body{
 }
 
 .hexagram-question, .hexagram-memo {
-	height: 80px;
+	height: 40px;
 }
 
 .hexagram-title {
 	font-size: 32px;
-	line-height: 32px;
+	line-height: 30px;
 }
 
 .hexagram-number {
 	width: 26px;
-	line-height: 32px;
-	font-size: 32px;
+	line-height: 30px;
+	font-size: 30px;
 	text-align: center;
 }
 
 .hexagram-text {
-	font-size: 32px;
-	line-height: 32px;
+	font-size: 30px;
+	line-height: 30px;
 	text-align: left;
 }
 
@@ -2888,7 +2888,7 @@ body{
 
 .hexagram-group {
 	width: 100px;
-	margin-bottom: 30px;
+	margin-bottom: 18px;
 }
 
 .hexagram-group-border {
@@ -4264,6 +4264,6 @@ body{
 
 @page{
 	widows: 2;
-	size: 2cm 2cm; /* 寬4cm 高6cm */
+	size: 1cm 1cm; /* 寬4cm 高6cm */
 	size: A4 portrait;  /* 尺寸/保留字 + 方向 */
   }
