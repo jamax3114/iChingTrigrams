@@ -2853,24 +2853,31 @@ body{
 }
 
 .hexagram-section {
-	display: flex;
-	gap: 35px;
 	margin-top: 1em;
+	display: flex;
+	gap: 20px;
+}
+
+.hexagram-question, .hexagram-memo {
+	height: 80px;
 }
 
 .hexagram-title {
-	font-size: 22px;
+	font-size: 32px;
+	line-height: 32px;
 }
 
 .hexagram-number {
-	width: 22px;
-	font-size: 24px;
+	width: 26px;
+	line-height: 32px;
+	font-size: 32px;
 	text-align: center;
 }
 
 .hexagram-text {
-	font-size: 22px;
-	text-align: center;
+	font-size: 32px;
+	line-height: 32px;
+	text-align: left;
 }
 
 .hexagram-title-none {
@@ -2880,20 +2887,18 @@ body{
 }
 
 .hexagram-group {
-	width: 50px;
-	margin-bottom: 10px;
-	text-align: left;
+	width: 100px;
+	margin-bottom: 30px;
 }
 
 .hexagram-group-border {
 	border-width:2px;
 	border-right-style:solid;
 	border-color:#000;
-	padding:0 10px;
 }
 
 .hexagram-secondary {
-	margin-left: 30px;
+	margin-left: 240px;
 }
 
 /*==========================

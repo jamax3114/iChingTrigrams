@@ -95,14 +95,14 @@ const hexagram = {
     "111111": {
         "key": "11",
         "value": 1,
-        "fullName": "亁為天",
+        "fullName": "天天",
         "name": "天天"
     },
     "000000": 
         {
             "key": "88",
             "value": 2,
-            "fullName": "坤為地",
+            "fullName": "地地",
             "name": "地地"
         }
     ,
@@ -318,7 +318,7 @@ const hexagram = {
         {
             "key": "66",
             "value": 29,
-            "fullName": "坎為水",
+            "fullName": "水水",
             "name": "水水"
         }
     ,
@@ -326,7 +326,7 @@ const hexagram = {
         {
             "key": "33",
             "value": 30,
-            "fullName": "離為火",
+            "fullName": "火火",
             "name": "火火"
         }
     ,
@@ -494,7 +494,7 @@ const hexagram = {
         {
             "key": "44",
             "value": 51,
-            "fullName": "震為雷",
+            "fullName": "雷雷",
             "name": "雷雷"
         }
     ,
@@ -502,7 +502,7 @@ const hexagram = {
         {
             "key": "77",
             "value": 52,
-            "fullName": "艮為山",
+            "fullName": "山山",
             "name": "山山"
         }
     ,
@@ -542,7 +542,7 @@ const hexagram = {
         {
             "key": "55",
             "value": 57,
-            "fullName": "巽為風",
+            "fullName": "風風",
             "name": "風風"
         }
     ,
@@ -550,7 +550,7 @@ const hexagram = {
         {
             "key": "22",
             "value": 58,
-            "fullName": "兌為澤",
+            "fullName": "澤澤",
             "name": "澤澤"
         }
     ,
